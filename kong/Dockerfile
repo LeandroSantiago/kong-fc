@@ -1,0 +1,3 @@
+FROM kong:3.2.2-ubuntu
+
+USER root
