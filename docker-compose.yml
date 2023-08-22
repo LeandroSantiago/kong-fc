@@ -30,11 +30,11 @@ services:
     volumes:
       - kong_data:/var/lib/postgresql/data
   
-  kong-migrations:
-    container_name: kong-migrations
+  kong-migration-bootstrap:
+    container_name: kong-migration-bootstrap
     build:
       context: ./kong
-    command: kong migrations bootstrap
+    command: kong migrations bootstrap --vv
     depends_on:
       - kong_db
     env_file:
